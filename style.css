@@ -4,14 +4,27 @@
 }
 body {
   min-height: 100vh;
-  background-image: url(img/laptop.jpg);
-  background-size: cover;
+  min-width: 100vh;
+  /* background-image: url(img/laptop.jpg); */
+  /* background-size: cover; */
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 50, 0.8), rgba(0, 0, 50, 0.8)),
+    url(img/laptop.jpg);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  /* Adjust background blend mode */
+  background-blend-mode: overlay; /* Adjust this to your preference */
+  /* background-color: #fff; Set a fallback background color */
+  background-attachment: fixed; /* Ensure background stays fixed while scrolling */
 }
 nav {
-  background-color: white;
+  background-color: inherit;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul {
@@ -30,13 +43,12 @@ nav a {
   padding: 0 30px;
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: 500;
 }
 nav a:hover {
-  background-color: #f0f0f0;
-  transition: all;
+  /* background-color: #f0f0f0; */
 }
 nav li:first-child {
   margin-right: auto;
@@ -85,5 +97,181 @@ nav li:first-child {
 @media (max-width: 400px) {
   .sidebar {
     width: 100%;
+  }
+}
+
+#intro {
+  /* background-image: url("./images/5.jpeg"); */
+  /* width: 100%; */
+  /* object-fit: cover; */
+  /* background-repeat: no-repeat; */
+  /* padding-bottom: 100px; */
+
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  /* gap: 3px; */
+  /* display: flex; */
+  /* justify-content: space-between; Align children horizontally with space between */
+  /* align-items: center; Align children vertically */
+  /* padding-bottom: 100px; */
+  /* Align children vertically */
+  width: 100%;
+  /* object-fit: cover; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: space-between; /* Align children horizontally with space between */
+  align-items: center; /* Align children vertically */
+  padding-bottom: 100px; /* Move this padding here from #intro */
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 150px;
+  /* backdrop-filter: blur(10px); */
+  border-radius: 10px;
+  .title h3 {
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+  }
+}
+.para p {
+  padding: 20px;
+  color: white;
+  font-size: 20px;
+}
+
+.right button {
+  color: white;
+  padding: 5px 6px;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  border-color: white;
+}
+.btn {
+  padding: 20px;
+}
+
+/*form*/
+
+.form-box {
+  /* width: 90%; */
+  /* max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: white;
+  padding: 50px 60px 70px;
+  text-align: center; */
+  /* margin-left: auto; Push it to the right */
+  /* width: 40%; Adjust width as needed */
+  max-width: 250px;
+  /* transform: translate(-20%); */
+  /* background: e; */
+  padding: 30px 60px 70px;
+  text-align: center;
+  width: 30%;
+  /* object-fit: cover; */
+  /* margin-left: 100px; */
+}
+.form-box h1 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  color: #3c00a0;
+  position: relative;
+}
+
+.form-box h1::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  border-radius: 3px;
+  background: #3c00a0;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.input-field {
+  background: #eaeaea;
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 13px 15px;
+  max-height: 65px;
+}
+
+.input-field i {
+  margin-left: 15px;
+  color: #999;
+}
+
+form p {
+  text-align: left;
+  font-size: 13px;
+}
+form p a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-field {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-field button {
+  flex-basis: 48%;
+  background: #3c00a0;
+  color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background 1s;
+}
+.input-group {
+  height: 280px;
+}
+
+.btn-field button.disable {
+  background: #eaeaea;
+  color: #555;
+}
+@media (max-width: 800px) {
+  /* Add media query for responsiveness */
+  #intro,
+  .form-box {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    width: 100%; /* Occupy full width */
+    margin-left: 0; /* Reset margin for stacking */
+  }
+  .container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: flex-start; /* Align children to the start on small screens */
+  }
+
+  .form-box {
+    margin-left: auto; /* Push .form-box to the right on small screens */
+    margin-top: 20px; /* Add some margin to separate it from #intro */
   }
 }
