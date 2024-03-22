@@ -47,10 +47,9 @@ nav a {
   text-decoration: none;
   font-weight: 500;
 }
-nav a:hover {
+/* nav a:hover {
   /* background-color: #f0f0f0; */
-}
-nav li:first-child {
+*/ nav li:first-child {
   margin-right: auto;
   font-weight: 900 !important;
 }
@@ -253,6 +252,23 @@ form p a {
   height: 280px;
 }
 
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.btns button {
+  flex-basis: 48%;
+  background: #3c00a0;
+  color: #fff;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background 1s;
+}
+
 .btn-field button.disable {
   background: #eaeaea;
   color: #555;
@@ -266,12 +282,20 @@ form p a {
     margin-left: 0; /* Reset margin for stacking */
   }
   .container {
+    display: flex;
     flex-direction: column; /* Stack elements vertically on small screens */
-    align-items: flex-start; /* Align children to the start on small screens */
+    align-items: flex-start;
+    justify-content: space-between;
+    /* Align children to the start on small screens */
   }
 
   .form-box {
     margin-left: auto; /* Push .form-box to the right on small screens */
     margin-top: 20px; /* Add some margin to separate it from #intro */
   }
+}
+.container {
+  display: flex;
+  flex-direction: row; /* Stack elements vertically on small screens */
+  /* align-items: flex-start; Align children to the start on small screens */
 }
